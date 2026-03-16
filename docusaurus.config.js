@@ -26,7 +26,10 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl: 'https://github.com/binhunaish/olem.ar/tree/main/',
         },
-        blog: false,
+        blog: {
+  showReadingTime: true,
+  editUrl: 'https://github.com/binhunaish/olem.ar/tree/main/',
+},
         theme: {
           customCss: './src/css/custom.css',
         },

@@ -7,7 +7,7 @@ const config = {
   future: {
     v4: true,
   },
-  url: 'https://olem.org.ly',
+  url: 'https://olem.org',
   baseUrl: '/',
   organizationName: 'عُلِم',
   projectName: '3olem',
@@ -22,7 +22,7 @@ const config = {
       'classic',
       ({
         docs: {
-          routeBasePath: '/docs',
+          routeBasePath: 'docs',
           sidebarPath: './sidebars.js',
           editUrl: 'https://github.com/binhunaish/olem.ar/tree/main/',
         },
@@ -31,6 +31,18 @@ const config = {
           customCss: './src/css/custom.css',
         },
       }),
+    ],
+  ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'basics',
+        path: 'basics-doc',
+        routeBasePath: 'basics-doc',
+        sidebarPath: './sidebarsBasics.js',
+        editUrl: 'https://github.com/binhunaish/olem.ar/tree/main/',
+      },
     ],
   ],
   themeConfig: {
@@ -50,6 +62,13 @@ const config = {
           sidebarId: 'tutorialSidebar',
           position: 'right',
           label: 'الدروس',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'basics',
+          sidebarId: 'basicsSidebar',
+          position: 'right',
+          label: 'الأساسيات',
         },
       ],
     },

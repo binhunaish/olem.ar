@@ -8,7 +8,7 @@ const config = {
     v4: true,
   },
   url: 'https://olem.org',
-  baseUrl: '/',
+  baseUrl: '/olem.ar',
   organizationName: 'عُلِم',
   projectName: '3olem',
   

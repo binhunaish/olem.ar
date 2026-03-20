@@ -54,7 +54,17 @@ const config = {
     ],
   ],
   themeConfig: {
-    image: 'img/logo.svg',
+    image: 'img/open graph.png',
+    metadata: [
+      {
+        property: 'og:image',
+        content: 'https://olem.org/olem.ar/img/open%20graph.png',
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://olem.org/olem.ar/img/open%20graph.png',
+      },
+    ],
     colorMode: {
       respectPrefersColorScheme: true,
     },

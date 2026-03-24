@@ -8,7 +8,7 @@ const config = {
     v4: true,
   },
   url: 'https://olem.org',
-  baseUrl: '/olem.ar',
+  baseUrl: '/',
   organizationName: 'عُلِم',
   projectName: '3olem',
   
@@ -98,7 +98,7 @@ const config = {
           items: [
             {
               label: 'الدروس',
-              to: '/docs/intro',
+              to: '/docs/python/مقدمة',
             },
             {
               label: 'المدونة',

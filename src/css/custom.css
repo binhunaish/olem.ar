@@ -1,6 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* ألوان رئيسية */
-  --ifm-color-primary: hsl(200, 100%, 50%);
+  --ifm-color-primary: #00aaff;
   --ifm-color-primary-dark: hsl(200, 100%, 40%);
   --ifm-color-primary-darker: hsl(200, 100%, 30%);
   --ifm-color-primary-darkest: hsl(200, 100%, 20%);
@@ -31,7 +35,7 @@
 
 /* ألوان الوضع المظلم */
 [data-theme='dark'] {
-  --ifm-color-primary: hsl(259, 90%, 66%);
+  --ifm-color-primary: #8c5af6;
   --ifm-color-primary-dark: hsl(259, 90%, 56%);
   --ifm-color-primary-darker: hsl(259, 90%, 46%);
   --ifm-color-primary-darkest: hsl(259, 90%, 36%);
@@ -47,45 +51,4 @@
   --font: hsl(0, 0%, 95%);
   --second-font: hsl(240, 10%, 85%);
   --disable-font: hsl(240, 10%, 75%);
-}
-
-.navbar {
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-.navbar * {
-  position: relative;
-  z-index: 2;
-}
-.navbar ::after {
-  background-color: var(--ifm-color-primary);
-  width: 300px;
-  height: 300px;
-  border-radius: 100%;
-  max-width: 30vw;
-  max-height: 30vh;
-  position: absolute;
-  top: 50%;
-  left: -50px;
-  content: "";
-  opacity: 0.1;
-  filter: blur(150px);
-  z-index: 1;
-}
-
-
-.navbar ::before {
-  background-color: var(--ifm-color-primary);
-  width: 300px;
-  height: 300px;
-  max-width: 30vw;
-  max-height: 30vh;
-  border-radius: 100%;
-  position: absolute;
-  bottom: 50%;
-  right: -50px;
-  content: "";
-  opacity: 0.1;
-  filter: blur(1500px);
-  z-index: 1;
 }

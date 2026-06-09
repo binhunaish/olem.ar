@@ -90,7 +90,6 @@ const config = {
         src: "/img/logo.svg",
       },
       items: [
-        { href: "https://github.com/binhunaish/olem.ar/blob/main/CONTRIBUTING.md", label: "المساهمة", position: "left" },
         { to: "/#why", label: "عن المشروع", position: "left" },
         {
           href: "https://github.com/binhunaish/olem.ar",

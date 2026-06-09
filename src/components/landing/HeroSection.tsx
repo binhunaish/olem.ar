@@ -15,7 +15,7 @@ export default function HeroSection({
   return (
     <section
       dir="rtl"
-      className="relative  overflow-hidden px-4 pt-20 pb-28 sm:px-6 lg:px-8
+      className="relative overflow-hidden px-4 pt-20 pb-28 sm:px-6 lg:px-8
        bg-[radial-gradient(85.66%_165.89%_at_22.66%_31.39%,rgba(163,118,255,0.15)_0%,rgba(163,118,255,0)_50%),radial-gradient(87.79%_170%_at_80%_70%,rgba(139,213,255,0.1)_0%,rgba(139,213,255,0)_50%)] "
     >
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -43,7 +43,7 @@ export default function HeroSection({
               عُلِم، تعلم واستخدم المحتوى المفيد
             </span>
 
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight text-[#E5E1E4] sm:text-5xl lg:text-[72px]">
+            <h1 className="mt-6 text-4xl font-bold leading-tight text-[#E5E1E4] sm:text-5xl lg:text-[72px]">
               عُلِم — تعلم
               <span className="text-[#8C5AF6] drop-shadow-[0_0_20px_rgba(140,90,246,0.5)] ">
                 <br />

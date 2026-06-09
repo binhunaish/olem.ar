@@ -17,13 +17,6 @@
   
 }
 
-html,
-body {
-  font-family: "Cairo", sans-serif;
-  background: #1C1C1C;
-  color: white;
-}
-
 @font-face {
   font-family: "IBMPlexSansArabicBold";
   src: url("../../static/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");
@@ -52,4 +45,13 @@ body {
   --font-bold: "IBMPlexSansArabicBold", "Cairo", sans-serif;
   --font-regular: "IBMPlexSansArabicRegular", "Cairo", sans-serif;
   --font-light: "IBMPlexSansArabicLight", "Cairo", sans-serif;
+}
+
+/* styling */
+
+html,
+body {
+  font-family: "IBMPlexSansArabicBold";
+  background: #1C1C1C;
+  color: white;
 }

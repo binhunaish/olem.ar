@@ -8,7 +8,7 @@ export default function Navbar() {
   const logoSrc = useBaseUrl("/img/logo.svg");
   const landingUrl = useBaseUrl("/");
   const docsUrl = useBaseUrl("/docs/basics-doc");
-  const blogUrl = "https://github.com/binhunaish/olem.ar/blob/main/CONTRIBUTING.md";
+  const ContributeUrl = "https://github.com/binhunaish/olem.ar/blob/main/CONTRIBUTING.md";
   const aboutUrl = useBaseUrl("/#why");
   const githubLogo = useBaseUrl("/img/Container.png");
 
@@ -30,9 +30,6 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6">
             <Link className="text-gray-300 hover:text-white" to={docsUrl}>
               الوثائق
-            </Link>
-            <Link className="text-gray-300 hover:text-white" to={blogUrl}>
-              المساهمة
             </Link>
             <Link className="text-gray-300 hover:text-white" to={aboutUrl}>
               عن المشروع
@@ -116,7 +113,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            to={blogUrl}
+            to={ContributeUrl}
             onClick={() => setOpen(false)}
             className="text-gray-300 hover:text-white transition"
           >

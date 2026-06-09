@@ -1,54 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap");
+@import "tailwindcss";
 
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
 :root {
-  /* ألوان رئيسية */
-  --ifm-color-primary: #00aaff;
-  --ifm-color-primary-dark: hsl(200, 100%, 40%);
-  --ifm-color-primary-darker: hsl(200, 100%, 30%);
-  --ifm-color-primary-darkest: hsl(200, 100%, 20%);
-  --ifm-color-primary-light: hsl(200, 100%, 50%);
-  --ifm-color-primary-lighter: hsl(200, 100%, 60%);
-  --ifm-color-primary-lightest: hsl(200, 100%, 70%);
-  --ifm-code-font-size: 95%;
-  --ifm-navbar-height: 4.5rem;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  /* الظل */
-  --shadow: 0 .2rem 1rem hsla(0, 0%, 0%, 0.15);
-
-  /* ألوان أولية */
-  --red: #ef4444;
-  --green: #84cc16;
-  --yellow: #fde047;
-  --black: #090909;
-
-  /* ألوان الواجهة */
-  --bg: hsl(240, 10%, 5%);
-  --sec: hsl(240, 10%, 10%);
-  --box: hsl(240, 10%, 15%);
-  --font: hsl(0, 0%, 95%);
-  --second-font: hsl(240, 10%, 85%);
-  --disable-font: hsl(240, 10%, 75%);
+ 
 }
 
-/* ألوان الوضع المظلم */
-[data-theme='dark'] {
-  --ifm-color-primary: #8c5af6;
-  --ifm-color-primary-dark: hsl(259, 90%, 56%);
-  --ifm-color-primary-darker: hsl(259, 90%, 46%);
-  --ifm-color-primary-darkest: hsl(259, 90%, 36%);
-  --ifm-color-primary-light: hsl(259, 90%, 76%);
-  --ifm-color-primary-lighter: hsl(259, 90%, 86%);
-  --ifm-color-primary-lightest: hsl(259, 90%, 96%);
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.15);
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
   
-  /* ألوان الواجهة */
-  --bg: hsl(240, 10%, 5%);
-  --sec: hsl(240, 10%, 10%);
-  --box: hsl(240, 10%, 15%);
-  --font: hsl(0, 0%, 95%);
-  --second-font: hsl(240, 10%, 85%);
-  --disable-font: hsl(240, 10%, 75%);
+}
+
+html,
+body {
+  font-family: "Cairo", sans-serif;
+  background: #1C1C1C;
+  color: white;
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabicBold";
+  src: url("../../static/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabicRegular";
+  src: url("../../static/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabicLight";
+  src: url("../../static/fonts/IBMPlexSansArabic-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@theme {
+  --font-bold: "IBMPlexSansArabicBold", "Cairo", sans-serif;
+  --font-regular: "IBMPlexSansArabicRegular", "Cairo", sans-serif;
+  --font-light: "IBMPlexSansArabicLight", "Cairo", sans-serif;
 }

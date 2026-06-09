@@ -18,8 +18,7 @@ const docsPlugins = getDocsInstances().map(instanceId => [
   {
     id: instanceId,
     path: `docs/${instanceId}`,
-    routeBasePath: `docs/${instanceId}`,
-    sidebarPath: false,
+    routeBasePath: `docs/${instanceId}`
   }
 ]);
 
@@ -31,10 +30,12 @@ const config = {
   future: {
     v4: true,
   },
-  url: 'https://binhunaish.github.io',
+  url: 'http://localhost:3000/',
   baseUrl: '/olem.ar',
   organizationName: 'عُلِم',
   projectName: 'olem.ar',
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'ignore',
 
   // language settings for Arabic with RTL support
   i18n: {
@@ -61,8 +62,20 @@ const config = {
     ],
   ],
 
-  // docs generation plugins for each instance from the "docs" directory
-  plugins: docsPlugins,
+  plugins: [
+    ...docsPlugins,
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends Tailwind CSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("@tailwindcss/postcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 
   // theme configuration for the project
   themeConfig:
@@ -77,10 +90,10 @@ const config = {
         src: "/img/logo.svg",
       },
       items: [
-        { to: "/blog", label: "المساهمة", position: "left" },
-        { to: "/blog", label: "عن المشروع", position: "left" },
+        { href: "https://github.com/binhunaish/olem.ar/blob/main/CONTRIBUTING.md", label: "المساهمة", position: "left" },
+        { to: "/#why", label: "عن المشروع", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/binhunaish/olem.ar",
           label: "GitHub",
           position: "right",
         },

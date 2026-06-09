@@ -1,145 +1,141 @@
 import { themes as prismThemes } from 'prism-react-renderer';
+import fs from "fs";
+import path from "path";
+
+// get Docs Instances from the "docs" directory
+function getDocsInstances() {
+  const docsPath = path.join(__dirname, 'docs');
+  if (!fs.existsSync(docsPath)) return [];
+
+  return fs.readdirSync(docsPath, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
+}
+
+// Create plugin instances for each docs instance for Docusaurus
+const docsPlugins = getDocsInstances().map(instanceId => [
+  '@docusaurus/plugin-content-docs',
+  {
+    id: instanceId,
+    path: `docs/${instanceId}`,
+    routeBasePath: `docs/${instanceId}`,
+    sidebarPath: false,
+  }
+]);
 
 const config = {
+  // Docusaurus Configuration for the project
   title: 'عُلِم',
   tagline: 'منصة تعليمية مفتوحة المصدر',
   favicon: 'img/favicon.ico',
   future: {
     v4: true,
   },
-  url: 'https://olem.org',
+  url: 'https://binhunaish.github.io',
   baseUrl: '/olem.ar',
   organizationName: 'عُلِم',
-  projectName: '3olem',
-  
+  projectName: 'olem.ar',
+
+  // language settings for Arabic with RTL support
   i18n: {
     defaultLocale: 'ar',
     locales: ['ar'],
     localeConfigs: {
-    ar: {
-      direction: 'rtl',
+      ar: {
+        direction: 'rtl',
       },
     }
   },
 
+  // the default setting of Docusaurus
   presets: [
     [
       'classic',
       ({
-        docs: {
-          routeBasePath: 'docs',
-          sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/binhunaish/olem.ar/tree/main/',
-        },
-        blog: {
-  showReadingTime: true,
-  editUrl: 'https://github.com/binhunaish/olem.ar/tree/main/',
-},
+        docs: false,
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       }),
     ],
   ],
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'basics',
-        path: 'basics-doc',
-        routeBasePath: 'basics-doc',
-        sidebarPath: './sidebarsBasics.js',
-        editUrl: 'https://github.com/binhunaish/olem.ar/tree/main/',
-      },
-    ],
-  ],
-  themeConfig: {
-    image: 'img/open graph.png',
-    metadata: [
-      {
-        property: 'og:image',
-        content: 'https://olem.org/olem.ar/img/open%20graph.png',
-      },
-      {
-        name: 'twitter:image',
-        content: 'https://olem.org/olem.ar/img/open%20graph.png',
-      },
-    ],
+
+  // docs generation plugins for each instance from the "docs" directory
+  plugins: docsPlugins,
+
+  // theme configuration for the project
+  themeConfig:
+  {
+    image: "/img/logo.svg",
     colorMode: {
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'عُلِم',
       logo: {
-        alt: 'شعار عُلِم',
-        src: 'img/logo.svg',
+        alt: "شعار غلم",
+        src: "/img/logo.svg",
       },
       items: [
+        { to: "/blog", label: "المساهمة", position: "left" },
+        { to: "/blog", label: "عن المشروع", position: "left" },
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'right',
-          label: 'الدروس',
-        },
-        {
-          type: 'docSidebar',
-          docsPluginId: 'basics',
-          sidebarId: 'basicsSidebar',
-          position: 'right',
-          label: 'الأساسيات',
+          href: "https://github.com/facebook/docusaurus",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'light',
+      style: "dark",
       links: [
         {
-          title: 'المحتوى',
+          title: "الدروس",
           items: [
             {
-              label: 'الدروس',
-              to: '/docs/python/مقدمة',
-            },
-            {
-              label: 'المدونة',
-              to: '/blog',
+              label: "ابدأ من المقدمة",
+              to: "/docs/intro",
             },
           ],
         },
         {
-          title: 'المجتمع',
+          title: "المجتمع",
           items: [
             {
-              label: 'مناقشات',
-              href: 'https://github.com/binhunaish/olem.ar/discussions',
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/docusaurus",
             },
             {
-              label: 'المساهمة',
-              href: 'https://github.com/binhunaish/olem.ar/blob/main/CONTRIBUTING.md',
+              label: "Discord",
+              href: "https://discordapp.com/invite/docusaurus",
+            },
+            {
+              label: "X",
+              href: "https://x.com/docusaurus",
             },
           ],
         },
         {
-          title: 'المزيد',
+          title: "روابط",
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/binhunaish/olem.ar',
+              label: "المدونة",
+              to: "/blog",
             },
             {
-              label: 'Libyan Cloud',
-              href: 'https://libyancloud.org',
+              label: "GitHub",
+              href: "https://github.com/facebook/docusaurus",
             },
           ],
         },
       ],
-      copyright: `حقوق النشر © ${new Date().getFullYear()} عُلِم.`,
+      copyright: `جميع الحقوق محفوظة © ${new Date().getFullYear()} غلم. مبني باستخدام Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-    },
-  },
+    }
+  }
 };
 
 export default config;

@@ -30,7 +30,7 @@ const config = {
   future: {
     v4: true,
   },
-  url: 'http://localhost:3000/',
+  url: 'https://binhunaish.github.io/',
   baseUrl: '/olem.ar',
   organizationName: 'عُلِم',
   projectName: 'olem.ar',

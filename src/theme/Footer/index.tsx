@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { GITHUB_URL } from "@site/src/config/constants";
 export default function Footer(): ReactNode {
   const icon1 = useBaseUrl("/img/icon7.png");
   const icon2 = useBaseUrl("/img/icon8.png");
@@ -8,13 +9,13 @@ export default function Footer(): ReactNode {
   const accessIcon = useBaseUrl("/img/icon10.png");
   return (
     <footer className="w-full bg-[#141414]  10 px-6 lg:px-12 pt-20 pb-10">
-      <div className="max-w-[1280px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-left">
           <div className="w-full">
             <h3 className="text-[#8C5AF6] font-bold text-[30px] leading-9 mb-6">
               عُلم
             </h3>
-            <p className="text-[#B3B3B3] text-[16px] leading-[26px] mb-6">
+            <p className="text-[#B3B3B3] text-[16px] leading-6.5 mb-6">
               مبادرة عربية تهدف لإثراء المحتوى التقني البرمجي باللغة العربية
               بأسلوب حديث ومفتوح المصدر.
             </p>
@@ -34,19 +35,21 @@ export default function Footer(): ReactNode {
 
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <Link to="/" className="hover:text-white transition">
+                <Link to="/privacy" className="hover:text-white transition">
                   الخصوصية
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-white transition">
+                <Link to="/terms" className="hover:text-white transition">
                   الشروط
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-white transition">
+                <a 
+                href={GITHUB_URL + "/discussions"} 
+                className="hover:text-white transition">
                   تواصل معنا
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -57,7 +60,7 @@ export default function Footer(): ReactNode {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <a
-                  href="https://github.com"
+                  href={GITHUB_URL}
                   target="_blank"
                   className="hover:text-white transition"
                 >
@@ -65,7 +68,9 @@ export default function Footer(): ReactNode {
                 </a>
               </li>
               <li>
-                <Link to="/" className="hover:text-white transition">
+                <Link 
+                href={GITHUB_URL + "/blob/main/CONTRIBUTING.md"}
+                className="hover:text-white transition">
                   نظام المساهمة
                 </Link>
               </li>

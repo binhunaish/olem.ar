@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { GITHUB_URL } from "../../config/constants";
 
 type HeroSectionProps = {
   reducedMotion: boolean;
@@ -66,13 +67,15 @@ export default function HeroSection({
                 ابدأ القراءة
               </Link>
 
-              <Link
-                to="https://github.com"
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="px-8 py-4 rounded-full   bg-[#2B2B2B]
                 text-[#E6E6E6] font-bold text-[18px] leading-[28px] border border-[#50505033] "
               >
                 &lt; &gt; ساهم على GitHub
-              </Link>
+              </a>
             </div>
           </div>
         </Reveal>

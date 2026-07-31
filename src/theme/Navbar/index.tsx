@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { GITHUB_URL } from "@site/src/config/constants";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function Navbar() {
 
       <nav
         dir="rtl"
-        className="navbar navbar--fixed-top w-full h-[70px] flex items-center justify-between
+        className="navbar navbar--fixed-top w-full h-17.5 flex items-center justify-between
         px-4 sm:px-6 lg:px-12
         bg-[rgba(28,28,28,0.6)] border-b border-white/10 backdrop-blur-md z-1"
       >
@@ -50,7 +51,7 @@ export default function Navbar() {
           </div>
 
           <a
-            href="https://github.com"
+            href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
             className="px-5 py-2 rounded-full bg-[rgba(140,90,246,1)] flex items-center gap-2 font-bold text-white"
@@ -85,7 +86,7 @@ export default function Navbar() {
 
         {/* Sidebar from LEFT */}
         <div
-          className={`absolute top-0 right-0 h-full w-[260px]
+          className={`absolute top-0 right-0 h-full w-65
           bg-[#0B0F1A] border-r border-white/10
           p-6 flex flex-col gap-6
           transition-transform duration-300 ease-out
@@ -132,7 +133,7 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="ابحث..."
-            className="w-full h-[40px] rounded-full bg-white/5 border border-white/10
+            className="w-full h-10 rounded-full bg-white/5 border border-white/10
             text-white placeholder-gray-400 px-4 outline-none"
           />
 

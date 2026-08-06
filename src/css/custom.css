@@ -1,5 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap");
-@import "tailwindcss";
+/* Material Symbols import */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+/*
+  please do not upgrade to Tailwind 4 unless Docusaurus is supporting it
+*/
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
 
 /**
  * Any CSS included here will be global. The classic template
@@ -41,17 +47,33 @@
   font-display: swap;
 }
 
-@theme {
-  --font-bold: "IBMPlexSansArabicBold", "Cairo", sans-serif;
-  --font-regular: "IBMPlexSansArabicRegular", "Cairo", sans-serif;
-  --font-light: "IBMPlexSansArabicLight", "Cairo", sans-serif;
+:root {
+  --font-bold: "IBMPlexSansArabicBold";
+  --font-regular: "IBMPlexSansArabicRegular";
+  --font-light: "IBMPlexSansArabicLight";
 }
 
-/* styling */
-
+/* tags styling */
 html,
 body {
-  font-family: "IBMPlexSansArabicBold";
+  font-family: "IBMPlexSansArabicRegular";
   background: #1C1C1C;
   color: white;
+}
+input, select, textarea, button {
+  font-family: "IBMPlexSansArabicRegular";
+  border: none;
+  outline: none;
+}
+a {
+  font-family: "IBMPlexSansArabicRegular";
+  color: inherit;
+  text-decoration: none;
+}
+
+/* theme styling */ 
+.theme-code-block, code {
+  background-color: #333333 !important;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }

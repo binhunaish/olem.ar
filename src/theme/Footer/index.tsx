@@ -64,7 +64,7 @@ export default function Footer(): ReactNode {
                   target="_blank"
                   className="hover:text-white transition"
                 >
-                  GitHub Repository
+                  مستودع GitHub
                 </a>
               </li>
               <li>

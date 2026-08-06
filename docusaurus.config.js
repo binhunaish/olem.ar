@@ -56,14 +56,18 @@ const config = {
         docs: false,
         blog: false,
         theme: {
+          // custom CSS file for the project
           customCss: './src/css/custom.css',
         },
       }),
     ],
   ],
 
+  // Docusaurus plugins for the project
   plugins: [
+    // Plugins for each docs instance
     ...docsPlugins,
+    // Tailwind CSS plugin for Docusaurus
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",
@@ -83,65 +87,6 @@ const config = {
     image: "/img/logo.svg",
     colorMode: {
       respectPrefersColorScheme: false,
-    },
-    navbar: {
-      logo: {
-        alt: "شعار غلم",
-        src: "/img/logo.svg",
-      },
-      items: [
-        { to: "/#why", label: "عن المشروع", position: "left" },
-        {
-          href: "https://github.com/binhunaish/olem.ar",
-          label: "GitHub",
-          position: "right",
-        },
-      ],
-    },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "الدروس",
-          items: [
-            {
-              label: "ابدأ من المقدمة",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
-          title: "المجتمع",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "روابط",
-          items: [
-            {
-              label: "المدونة",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
-          ],
-        },
-      ],
-      copyright: `جميع الحقوق محفوظة © ${new Date().getFullYear()} غلم. مبني باستخدام Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

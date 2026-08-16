@@ -25,6 +25,10 @@ jobs:
           node-version: 20
           cache: 'npm'
 
+      - name: Clean install (remove old modules/cache)
+        run: |
+          rm -rf node_modules .docusaurus .cache
+
       - name: Install dependencies
         run: npm ci
 

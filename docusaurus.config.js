@@ -94,12 +94,12 @@ const config = {
     },
   },
 
-  /*markdown: {
+  markdown: {
     hooks: {
       onBrokenMarkdownLinks: "warn",
       onBrokenMarkdownImages: "warn",
     },
-  },*/
+  },
 };
 
 export default config;

@@ -86,6 +86,7 @@ const config = {
   themeConfig: {
     image: "/img/logo.svg",
     colorMode: {
+      defaultMode: 'dark',
       respectPrefersColorScheme: false,
     },
     prism: {

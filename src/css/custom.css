@@ -13,10 +13,32 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+ /* you can add the variables of the light here */
 :root {
- 
+  /* fonts variales*/
+  --font-bold: "IBMPlexSansArabicBold";
+  --font-regular: "IBMPlexSansArabicRegular";
+  --font-light: "IBMPlexSansArabicLight";
 }
+
+:root[data-theme='dark'] {
+  --ifm-color-primary: #8c5af6;
+  --ifm-color-primary-dark: #6f47c4;
+  --ifm-color-primary-darker: #533493;
+  --ifm-color-primary-darkest: #392463;
+  --ifm-color-primary-light: #a77df9;
+  --ifm-color-primary-lighter: #c4a6fb;
+  --ifm-color-primary-lightest: #e5e1e4;
+
+  --ifm-background-color: #1c1c1c;
+  --ifm-text-color: #e6e6e6;
+  --ifm-text-color-secondary: #b3b3b3;
+
+  --ifm-accent-green: #7bc279;
+  --ifm-accent-pink: #ff78cb;
+  --ifm-accent-red: #ff9595;
+}
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
@@ -47,12 +69,6 @@
   font-display: swap;
 }
 
-:root {
-  --font-bold: "IBMPlexSansArabicBold";
-  --font-regular: "IBMPlexSansArabicRegular";
-  --font-light: "IBMPlexSansArabicLight";
-}
-
 /* tags styling */
 html,
 body {
@@ -65,6 +81,9 @@ input, select, textarea, button {
   border: none;
   outline: none;
 }
+button {
+  background-color: transparent;
+}
 a {
   font-family: "IBMPlexSansArabicRegular";
   color: inherit;
@@ -73,7 +92,7 @@ a {
 
 /* theme styling */ 
 .theme-code-block, code {
-  background-color: #333333 !important;
+  background-color: #0d0d0d !important;
   border-radius: 0.5rem;
   overflow: hidden;
 }

@@ -49,7 +49,7 @@ git clone https://github.com/binhunaish/olem.ar.git
 الانتقال إلى مجلد المشروع:
 
 ```bash
-cd olem
+cd olem.ar
 ```
 
 تثبيت الاعتمادات البرمجية اللازمة:

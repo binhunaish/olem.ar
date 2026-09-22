@@ -1,3 +1,4 @@
+import NavbarColorModeToggle from "@theme/Navbar/ColorModeToggle";
 import { useState } from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -20,7 +21,7 @@ export default function Navbar() {
         dir="rtl"
         className="navbar navbar--fixed-top w-full h-17.5 flex items-center justify-between
         px-4 sm:px-6 lg:px-12
-        bg-[rgba(28,28,28,0.6)] border-b border-white/10 backdrop-blur-md z-1"
+        bg-[var(--olem-navbar)] border-b border-[var(--olem-nav-border)] backdrop-blur-md z-1"
       >
        
         <div className="flex items-center gap-4 lg:gap-8">
@@ -29,10 +30,10 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            <Link className="text-gray-300 hover:text-white" to={docsUrl}>
+            <Link className="text-[var(--olem-nav-text)] hover:text-[var(--olem-nav-hover)]" to={docsUrl}>
               الوثائق
             </Link>
-            <Link className="text-gray-300 hover:text-white" to={aboutUrl}>
+            <Link className="text-[var(--olem-nav-text)] hover:text-[var(--olem-nav-hover)]" to={aboutUrl}>
               عن المشروع
             </Link>
           </div>
@@ -44,9 +45,9 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="ابحث..."
-              className="w-fit h-full rounded-full bg-white/5 border border-white/10
-              text-white placeholder-gray-400 px-4 outline-none
-              focus:border-purple-500 transition"
+              className="w-fit h-full rounded-full bg-[var(--olem-input)] border border-[var(--olem-nav-border)]
+              text-[var(--ifm-text-color)] placeholder-[var(--olem-placeholder)] px-4 outline-none
+              focus:border-[var(--ifm-color-primary)] transition"
             />
           </div>
 
@@ -54,7 +55,7 @@ export default function Navbar() {
             href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
-            className="px-5 py-2 rounded-full bg-[rgba(140,90,246,1)] flex items-center gap-2 font-bold text-white"
+            className="px-5 py-2 rounded-full bg-[var(--ifm-color-primary)] flex items-center gap-2 font-bold text-white"
           >
             <img src={githubLogo} alt="GitHub" className="" />
             ساهم
@@ -62,12 +63,17 @@ export default function Navbar() {
         </div>
 
      
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setOpen(true)}
-        >
-          ☰
-        </button>
+        <div className="flex items-center gap-3">
+          <NavbarColorModeToggle />
+          <button
+            aria-label="فتح القائمة"
+            aria-expanded={open}
+            className="md:hidden text-[var(--ifm-text-color)] text-2xl"
+            onClick={() => setOpen(true)}
+          >
+            ☰
+          </button>
+        </div>
       </nav>
 
    
@@ -87,18 +93,18 @@ export default function Navbar() {
         {/* Sidebar from LEFT */}
         <div
           className={`absolute top-0 right-0 h-full w-65
-          bg-[#0B0F1A] border-r border-white/10
+          bg-[var(--olem-menu)] border-r border-[var(--olem-nav-border)]
           p-6 flex flex-col gap-6
           transition-transform duration-300 ease-out
           ${open ? "translate-x-0" : "-translate-x-full"} z-100`}
         >
           {/* Header */}
           <div className="flex items-center justify-between">
-            <span className="text-white font-semibold">القائمة</span>
+            <span className="text-[var(--ifm-text-color)] font-semibold">القائمة</span>
 
             <button
               onClick={() => setOpen(false)}
-              className="text-sm text-gray-400 hover:text-white transition"
+              className="text-sm text-[var(--olem-placeholder)] hover:text-[var(--olem-nav-hover)] transition"
             >
               إلغاء
             </button>
@@ -108,7 +114,7 @@ export default function Navbar() {
           <Link
             to={docsUrl}
             onClick={() => setOpen(false)}
-            className="text-gray-300 hover:text-white transition"
+            className="text-[var(--olem-nav-text)] hover:text-[var(--olem-nav-hover)] transition"
           >
             الوثائق
           </Link>
@@ -116,7 +122,7 @@ export default function Navbar() {
           <Link
             to={ContributeUrl}
             onClick={() => setOpen(false)}
-            className="text-gray-300 hover:text-white transition"
+            className="text-[var(--olem-nav-text)] hover:text-[var(--olem-nav-hover)] transition"
           >
             المساهمة
           </Link>
@@ -124,7 +130,7 @@ export default function Navbar() {
           <Link
             to={aboutUrl}
             onClick={() => setOpen(false)}
-            className="text-gray-300 hover:text-white transition"
+            className="text-[var(--olem-nav-text)] hover:text-[var(--olem-nav-hover)] transition"
           >
             عن المشروع
           </Link>
@@ -133,8 +139,8 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="ابحث..."
-            className="w-full h-10 rounded-full bg-white/5 border border-white/10
-            text-white placeholder-gray-400 px-4 outline-none"
+            className="w-full h-10 rounded-full bg-[var(--olem-input)] border border-[var(--olem-nav-border)]
+            text-[var(--ifm-text-color)] placeholder-[var(--olem-placeholder)] px-4 outline-none"
           />
 
           {/* Button */}
@@ -142,7 +148,7 @@ export default function Navbar() {
             href="https://github.com"
             target="_blank"
             rel="noreferrer"
-            className="px-5 py-2 rounded-full bg-[#8C5AF6]
+            className="px-5 py-2 rounded-full bg-[var(--ifm-color-primary)]
             flex items-center justify-center gap-2 text-white font-bold"
           >
             <img src={githubLogo} alt="GitHub" />

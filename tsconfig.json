@@ -2,12 +2,15 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "allowJs": true,
     "resolveJsonModule": true,
-
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -18,15 +21,25 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@site/*": ["./*"],
-      "@src/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@site/*": [
+        "./*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ]
     },
-    "types": ["docusaurus", "node", "@docusaurus/module-type-aliases"],
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true
+    "types": [
+      "node",
+      "@docusaurus/module-type-aliases",
+      "@docusaurus/theme-classic"
+    ],
+    "noEmit": true
   },
   "include": [
     "src/**/*",

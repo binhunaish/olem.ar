@@ -1,8 +1,8 @@
+import ThemeImage from "../ThemeImage";
 import type { ReactNode } from "react";
 import Link from "@docusaurus/Link";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { GITHUB_URL } from "../../config/constants";
 
 type HeroSectionProps = {
@@ -12,7 +12,6 @@ type HeroSectionProps = {
 export default function HeroSection({
   reducedMotion,
 }: HeroSectionProps): ReactNode {
-  const logoSrc = useBaseUrl("/img/Container1.png");
   return (
     <section
       dir="rtl"
@@ -37,22 +36,22 @@ export default function HeroSection({
         <Reveal delay={0.1} reducedMotion={reducedMotion}>
           <div className="">
             <span
-              className="inline-block rounded-full px-4 py-1 bg-[rgba(140,90,246,0.2)] 
-            text-4 leading-6 font-regular text-[rgba(140,90,246,1)]"
+              className="inline-block rounded-full px-4 py-1 bg-[var(--olem-accent-soft)]
+            text-4 leading-6 font-regular text-[var(--ifm-color-primary)]"
             >
-              <img src={logoSrc} alt="logo" className="inline-block mr-[6px]" />
+              <ThemeImage dark="/img/Container1.png" light="/img/light/badge.svg" alt="logo" className="inline-block mr-[6px] w-3.5 h-3.5" />
               عُلِم، تعلم واستخدم المحتوى المفيد
             </span>
 
-            <h1 className="mt-6 text-4xl font-bold leading-tight text-[#E5E1E4] sm:text-5xl lg:text-[72px]">
+            <h1 className="mt-6 text-4xl font-bold leading-tight text-[var(--olem-hero-heading)] sm:text-5xl lg:text-[72px]">
               عُلِم — تعلم
-              <span className="text-[#8C5AF6] drop-shadow-[0_0_20px_rgba(140,90,246,0.5)] ">
+              <span className="text-[var(--ifm-color-primary)] [filter:var(--olem-heading-shadow)] ">
                 <br />
                 البرمجة بالعربية
               </span>
             </h1>
 
-            <p className="mt-5 max-w-xl font-regular text-[20px] text-[#B3B3B3] leading-[32.5px]">
+            <p className="mt-5 max-w-xl font-regular text-[20px] text-[var(--ifm-text-color-secondary)] leading-[32.5px]">
               دروس منظمة على شكل مستندات، مفتوحة المصدر، والمساهمات تبدأ رحلتك
               البرمجية بلغة الضاد عبر GitHub.
             </p>
@@ -60,9 +59,9 @@ export default function HeroSection({
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/docs/basics-doc"
-                className="px-8 py-4 rounded-full bg-[#8C5AF6] text-white font-bold text-[18px] leading-[28px] 
+                className="px-8 py-4 rounded-full bg-[var(--ifm-color-primary)] text-white font-bold text-[18px] leading-[28px]
                 hover:opacity-90 transition
-                shadow-[0_0_30px_rgba(140,90,246,0.4)]"
+                shadow-[var(--olem-accent-shadow)]"
               >
                 ابدأ القراءة
               </Link>
@@ -71,8 +70,8 @@ export default function HeroSection({
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="px-8 py-4 rounded-full   bg-[#2B2B2B]
-                text-[#E6E6E6] font-bold text-[18px] leading-[28px] border border-[#50505033] "
+                className="px-8 py-4 rounded-full   bg-[var(--olem-secondary-button)]
+                text-[var(--ifm-text-color)] font-bold text-[18px] leading-[28px] border border-[var(--olem-border)] "
               >
                 &lt; &gt; ساهم على GitHub
               </a>
@@ -81,11 +80,12 @@ export default function HeroSection({
         </Reveal>
 
         <Reveal delay={0.2} reducedMotion={reducedMotion}>
+          <div className="olem-code-visual">
           <motion.div
             animate={reducedMotion ? undefined : { y: [0, -8, 0] }}
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            className="mx-auto w-full p-6 rounded-4xl border-8 border-[#4C4C4C1A]
-            bg-[#0F0F0F]  shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]
+            className="mx-auto w-full p-6 rounded-4xl border-8 olem-code-preview
+            bg-[#0F0F0F]
             backdrop-blur-xl"
           >
             <div className="mb-4 flex flex-row-reverse justify-end gap-2">
@@ -100,6 +100,7 @@ export default function HeroSection({
               <span className="text-[#FF9595]">"Hello World"</span>);
             </p>
           </motion.div>
+          </div>
         </Reveal>
       </div>
     </section>

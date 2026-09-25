@@ -13,12 +13,46 @@
  * work well for content-centric websites.
  */
 
- /* you can add the variables of the light here */
+/* Semantic colors shared by the landing page and Docusaurus content. */
 :root {
-  /* fonts variales*/
   --font-bold: "IBMPlexSansArabicBold";
   --font-regular: "IBMPlexSansArabicRegular";
   --font-light: "IBMPlexSansArabicLight";
+  --ifm-color-primary: #00aaff;
+  --ifm-color-primary-dark: #0099e6;
+  --ifm-color-primary-darker: #0091d9;
+  --ifm-color-primary-darkest: #0077b3;
+  --ifm-color-primary-light: #1ab3ff;
+  --ifm-color-primary-lighter: #26b7ff;
+  --ifm-color-primary-lightest: #4dc4ff;
+  --ifm-background-color: #e6e6e6;
+  --ifm-text-color: #1a1a1a;
+  --ifm-text-color-secondary: #4d4d4d;
+  --olem-card: #ccc;
+  --olem-secondary-button: #ccc;
+  --olem-footer: #d9d9d9;
+  --olem-hero-heading: #404040;
+  --olem-accent-soft: rgba(0, 170, 255, 0.2);
+  --olem-step: rgba(204, 204, 204, 0.5);
+  --olem-navbar: rgba(204, 204, 204, 0.6);
+  --olem-menu: #e6e6e6;
+  --olem-input: #e6e6e6;
+  --olem-nav-text: #1a1a1a;
+  --olem-nav-hover: #1a1a1a;
+  --olem-placeholder: #4d4d4d;
+  --olem-footer-links: #4d4d4d;
+  --olem-footer-fine: #4d4d4d;
+  --olem-border: rgba(178, 178, 178, 0.2);
+  --olem-nav-border: rgba(178, 178, 178, 0.1);
+  --olem-code-border: rgba(76, 76, 76, 0.1);
+  --olem-card-shadow: 0px 12px 16px rgba(0, 0, 0, 0.1);
+  --olem-code-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --olem-accent-shadow: none;
+  --olem-heading-shadow: none;
+  --olem-code-frame: #e6e6e6;
+  --ifm-accent-green: #7bc279;
+  --ifm-accent-pink: #ff78cb;
+  --ifm-accent-red: #ff9595;
 }
 
 :root[data-theme='dark'] {
@@ -29,20 +63,42 @@
   --ifm-color-primary-light: #a77df9;
   --ifm-color-primary-lighter: #c4a6fb;
   --ifm-color-primary-lightest: #e5e1e4;
-
   --ifm-background-color: #1c1c1c;
   --ifm-text-color: #e6e6e6;
   --ifm-text-color-secondary: #b3b3b3;
-
-  --ifm-accent-green: #7bc279;
-  --ifm-accent-pink: #ff78cb;
-  --ifm-accent-red: #ff9595;
+  --olem-card: #333;
+  --olem-secondary-button: #2b2b2b;
+  --olem-footer: #141414;
+  --olem-hero-heading: #e5e1e4;
+  --olem-accent-soft: rgba(140, 90, 246, 0.2);
+  --olem-step: #33333380;
+  --olem-navbar: rgba(28, 28, 28, 0.6);
+  --olem-menu: #0b0f1a;
+  --olem-input: rgba(255, 255, 255, 0.05);
+  --olem-nav-text: #d1d5db;
+  --olem-nav-hover: #fff;
+  --olem-placeholder: #9ca3af;
+  --olem-footer-links: #9ca3af;
+  --olem-footer-fine: #4d4d4d;
+  --olem-border: #50505033;
+  --olem-nav-border: rgba(255, 255, 255, 0.1);
+  --olem-card-shadow: 0 18px 34px -26px rgba(0, 0, 0, 0.8);
+  --olem-code-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+  --olem-accent-shadow: 0 0 30px rgba(140, 90, 246, 0.4);
+  --olem-heading-shadow: drop-shadow(0 0 20px rgba(140, 90, 246, 0.5));
+  --olem-code-frame: #0f0f0f;
 }
 
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  
+/* Explicit theme selectors override Infima's own dark-mode defaults. */
+:root, :root[data-theme='dark'] {
+  --ifm-font-color-base: var(--ifm-text-color);
+  --ifm-heading-color: var(--ifm-text-color);
+  --ifm-background-surface-color: var(--olem-card);
+  --ifm-navbar-background-color: var(--olem-navbar);
+  --ifm-navbar-link-color: var(--olem-nav-text);
+  --ifm-footer-background-color: var(--olem-footer);
+  --ifm-color-content: var(--ifm-text-color);
+  --ifm-color-content-secondary: var(--ifm-text-color-secondary);
 }
 
 @font-face {
@@ -73,26 +129,67 @@
 html,
 body {
   font-family: "IBMPlexSansArabicRegular";
-  background: #1C1C1C;
-  color: white;
+  background: var(--ifm-background-color);
+  color: var(--ifm-text-color);
 }
 input, select, textarea, button {
   font-family: "IBMPlexSansArabicRegular";
-  border: none;
-  outline: none;
 }
 button {
+  border: none;
   background-color: transparent;
 }
 a {
   font-family: "IBMPlexSansArabicRegular";
-  color: inherit;
   text-decoration: none;
 }
 
 /* theme styling */ 
 .theme-code-block, code {
-  background-color: #0d0d0d !important;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+.olem-code-preview {
+  box-shadow: var(--olem-code-shadow);
+  border-color: var(--olem-code-border);
+}
+
+.olem-code-visual {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Figma's two cyan lights sit behind the panel, separate from its shadow. */
+[data-theme='light'] .olem-code-visual::before,
+[data-theme='light'] .olem-code-visual::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+[data-theme='light'] .olem-code-visual::before {
+  top: -80px;
+  left: -80px;
+  opacity: 0.2;
+}
+
+[data-theme='light'] .olem-code-visual::after {
+  right: -80px;
+  bottom: -80px;
+  opacity: 0.1;
+}
+
+[data-theme='light'] .olem-code-preview {
+  box-shadow: 0 0 0 8px var(--olem-code-frame), var(--olem-code-shadow);
 }

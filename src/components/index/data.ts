@@ -2,6 +2,7 @@ export type WhyCard = {
   title: string;
   body: string;
   icon: string;
+  lightIcon: string;
 };
 
 export type DocsCard = {
@@ -10,6 +11,7 @@ export type DocsCard = {
   href: string;
   description: string;
   icon: string;
+  lightIcon: string;
 };
 type Step = {
   title: string;
@@ -21,17 +23,20 @@ export const whyCards: WhyCard[] = [
   {
     title: "تعليم عملي",
     body: "مسارات واضحة ومشاريع تطبيقية تأخذك من الصفر حتى الاحتراف في مجالات تقنية متنوعة.",
-    icon: "img/icon1.png",
+    icon: "/img/icon1.png",
+    lightIcon: "/img/light/practical.svg",
   },
   {
     title: "مفتوح و مجتمعي",
     body: "كل المحتوى متاح على GitHub يمكنك المساهمة في تحسين الدروس أو إضافة محتوى جديد بسهولة.",
-    icon: "img/icon2.png",
+    icon: "/img/icon2.png",
+    lightIcon: "/img/light/community.svg",
   },
   {
     title: "محتوى عربي واضح",
     body: "شروحات مبسطة ومترجمة للمصطلحات التقنية مع الحفاظ على دقة المعنى العلمي والعملي.",
-    icon: "img/icon3.png",
+    icon: "/img/icon3.png",
+    lightIcon: "/img/light/arabic.svg",
   },
 ];
 
@@ -42,7 +47,8 @@ export const docsCards: DocsCard[] = [
     href: "/docs/basics-doc/",
     description:
       "مدخل شامل لعالم البرمجة، الفرق بين المجالات المختلفة، وكيف تختار تخصصك الأول.",
-    icon: "img/icon4.png",
+    icon: "/img/icon4.png",
+    lightIcon: "/img/light/programming.svg",
   },
   {
     title: "مقدمة في بايثون",
@@ -51,7 +57,8 @@ export const docsCards: DocsCard[] = [
     description:
       "تعلم لغة بايثون من الصفر؛ المتغيرات،\
 الدوال، وكيفية بناء أول مشروع لك.",
-    icon: "img/icon5.png",
+    icon: "/img/icon5.png",
+    lightIcon: "/img/light/python.svg",
   },
   {
     title: "أساسيات الويب",
@@ -59,7 +66,8 @@ export const docsCards: DocsCard[] = [
     href: "/docs/basics-doc/مجالات البرمجة/تطوير المواقع الإلكترونية/الواجهات الأمامية",
     description:
       "تعلم كيفية بناء صفحات ويب تفاعلية باستخدام HTML و CSS و JavaScript.",
-    icon: "img/Icon6.png",
+    icon: "/img/Icon6.png",
+    lightIcon: "/img/light/web.svg",
   },
 ];
 export const contributionSteps: string[] = [

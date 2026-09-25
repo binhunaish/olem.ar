@@ -2,43 +2,34 @@ import { useState } from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { GITHUB_URL } from "@site/src/config/constants";
+import Links from './coponents/links'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const logoSrc = useBaseUrl("/img/logo.svg");
   const landingUrl = useBaseUrl("/");
-  const docsUrl = useBaseUrl("/docs/basics-doc");
-  const ContributeUrl = "https://github.com/binhunaish/olem.ar/blob/main/CONTRIBUTING.md";
-  const aboutUrl = useBaseUrl("/#why");
   const githubLogo = useBaseUrl("/img/Container.png");
 
   return (
     <>
-
       <nav
         dir="rtl"
         className="navbar navbar--fixed-top w-full h-17.5 flex items-center justify-between
         px-4 sm:px-6 lg:px-12
         bg-[rgba(28,28,28,0.6)] border-b border-white/10 backdrop-blur-md z-1"
       >
-       
-        <div className="flex items-center gap-4 lg:gap-8">
-          <Link to={landingUrl}>
+        <div className="flex flex-row items-center gap-4 lg:gap-8">
+          <Link className="flex flex-row items-center gap-4" to={landingUrl}>
             <img src={logoSrc} alt="Logo" className="h-8 w-auto" />
+            <div className="flex text-2xl">عُلِم</div>
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            <Link className="text-gray-300 hover:text-white" to={docsUrl}>
-              الوثائق
-            </Link>
-            <Link className="text-gray-300 hover:text-white" to={aboutUrl}>
-              عن المشروع
-            </Link>
+            <Links />
           </div>
         </div>
 
-      
         <div className="hidden md:flex justify-center gap-4">
           <div className="relative ">
             <input
@@ -61,7 +52,6 @@ export default function Navbar() {
           </a>
         </div>
 
-     
         <button
           className="md:hidden text-white text-2xl"
           onClick={() => setOpen(true)}
@@ -70,7 +60,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-   
       <div
         className={`fixed inset-0 z-50 transition ${
           open ? "visible" : "invisible"
@@ -105,29 +94,7 @@ export default function Navbar() {
           </div>
 
           {/* Links */}
-          <Link
-            to={docsUrl}
-            onClick={() => setOpen(false)}
-            className="text-gray-300 hover:text-white transition"
-          >
-            الوثائق
-          </Link>
-
-          <Link
-            to={ContributeUrl}
-            onClick={() => setOpen(false)}
-            className="text-gray-300 hover:text-white transition"
-          >
-            المساهمة
-          </Link>
-
-          <Link
-            to={aboutUrl}
-            onClick={() => setOpen(false)}
-            className="text-gray-300 hover:text-white transition"
-          >
-            عن المشروع
-          </Link>
+          <Links />
 
           {/* Search */}
           <input

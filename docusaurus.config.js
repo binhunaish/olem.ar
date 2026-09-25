@@ -9,7 +9,8 @@ function getDocsInstances() {
 
   return fs
     .readdirSync(docsPath, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
+    .filter((dirent) => dirent.isDirectory() 
+    && dirent.name.slice(-4) == "-doc")
     .map((dirent) => dirent.name);
 }
 

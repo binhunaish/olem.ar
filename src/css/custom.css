@@ -1,5 +1,5 @@
 /* Material Symbols import */
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded');
 
 /*
   please do not upgrade to Tailwind 4 unless Docusaurus is supporting it
@@ -28,6 +28,9 @@
   --ifm-background-color: #e6e6e6;
   --ifm-text-color: #1a1a1a;
   --ifm-text-color-secondary: #4d4d4d;
+  --olem-text1: #1A1A1A;
+  --olem-text2: #4D4D4D;
+  --olem-text3: #4D4D4D;
   --olem-card: #ccc;
   --olem-secondary-button: #ccc;
   --olem-footer: #d9d9d9;
@@ -67,6 +70,9 @@
   --ifm-text-color: #e6e6e6;
   --ifm-text-color-secondary: #b3b3b3;
   --olem-card: #333;
+  --olem-text1: #E6E6E6;
+  --olem-text2: #B3B3B3;
+  --olem-text3: #4D4D4D;
   --olem-secondary-button: #2b2b2b;
   --olem-footer: #141414;
   --olem-hero-heading: #e5e1e4;
@@ -150,7 +156,7 @@ a {
   overflow: hidden;
 }
 :where(a, button, input, select, textarea):focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
+  outline: 2px solid;
   outline-offset: 3px;
 }
 

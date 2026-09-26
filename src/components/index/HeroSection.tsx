@@ -1,4 +1,3 @@
-import ThemeImage from "../ThemeImage";
 import type { ReactNode } from "react";
 import Link from "@docusaurus/Link";
 import { motion } from "framer-motion";
@@ -20,13 +19,13 @@ export default function HeroSection({
     >
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div
-          className="absolute w-[700px] h-[500px] left-[10%] top-[10%]
+          className="absolute w-125 h-125 left-[10%] top-[10%]
           bg-[radial-gradient(circle_at_center,rgba(163,118,255,0.25),transparent_60%)]
           blur-[120px]"
         />
 
         <div
-          className="absolute w-[600px] h-[500px] right-[5%] bottom-[5%]
+          className="absolute w-150 h-125 right-[5%] bottom-[5%]
           bg-[radial-gradient(circle_at_center,rgba(139,213,255,0.18),transparent_60%)]
           blur-[120px]"
         />
@@ -36,22 +35,24 @@ export default function HeroSection({
         <Reveal delay={0.1} reducedMotion={reducedMotion}>
           <div className="">
             <span
-              className="inline-block rounded-full px-4 py-1 bg-[var(--olem-accent-soft)]
-            text-4 leading-6 font-regular text-[var(--ifm-color-primary)]"
+              className="flex rounded-full w-max px-4 py-1 bg-(--olem-accent-soft)
+            text-4 justify-center items-center gap-1 font-regular text-(--ifm-color-primary)"
             >
-              <ThemeImage dark="/img/Container1.png" light="/img/light/badge.svg" alt="logo" className="inline-block mr-[6px] w-3.5 h-3.5" />
+              <span className="material-symbols-rounded h-full text-sm w-3.5 primary">
+                interests
+              </span>{" "}
               عُلِم، تعلم واستخدم المحتوى المفيد
             </span>
 
-            <h1 className="mt-6 text-4xl font-bold leading-tight text-[var(--olem-hero-heading)] sm:text-5xl lg:text-[72px]">
+            <h1 className="mt-6 text-4xl font-bold leading-tight text-(--olem-hero-heading) sm:text-5xl lg:text-[72px]">
               عُلِم — تعلم
-              <span className="text-[var(--ifm-color-primary)] [filter:var(--olem-heading-shadow)] ">
+              <span className="text-(--ifm-color-primary) filter-(--olem-heading-shadow) ">
                 <br />
                 البرمجة بالعربية
               </span>
             </h1>
 
-            <p className="mt-5 max-w-xl font-regular text-[20px] text-[var(--ifm-text-color-secondary)] leading-[32.5px]">
+            <p className="mt-5 max-w-xl font-regular text-[20px] text-(--ifm-text-color-secondary) leading-[32.5px]">
               دروس منظمة على شكل مستندات، مفتوحة المصدر، والمساهمات تبدأ رحلتك
               البرمجية بلغة الضاد عبر GitHub.
             </p>
@@ -59,9 +60,9 @@ export default function HeroSection({
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/docs/basics-doc"
-                className="px-8 py-4 rounded-full bg-[var(--ifm-color-primary)] text-white font-bold text-[18px] leading-[28px]
+                className="inline-flex shrink-0 items-center justify-center whitespace-nowrap px-8 py-4 rounded-full bg-(--ifm-color-primary) text-white font-bold text-[18px] leading-7
                 hover:opacity-90 transition
-                shadow-[var(--olem-accent-shadow)]"
+                shadow-(--olem-accent-shadow)"
               >
                 ابدأ القراءة
               </Link>
@@ -70,10 +71,11 @@ export default function HeroSection({
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="px-8 py-4 rounded-full   bg-[var(--olem-secondary-button)]
-                text-[var(--ifm-text-color)] font-bold text-[18px] leading-[28px] border border-[var(--olem-border)] "
+                className="flex shrink-0 w-max gap-1 items-center justify-center whitespace-nowrap px-8 py-4 rounded-full bg-(--olem-secondary-button)
+                text-(--ifm-text-color) font-bold text-[18px] leading-7 border border-(--olem-border) "
               >
-                &lt; &gt; ساهم على GitHub
+                <span className="material-symbols-rounded">code</span>
+                ساهم على GitHub
               </a>
             </div>
           </div>
@@ -81,25 +83,28 @@ export default function HeroSection({
 
         <Reveal delay={0.2} reducedMotion={reducedMotion}>
           <div className="olem-code-visual">
-          <motion.div
-            animate={reducedMotion ? undefined : { y: [0, -8, 0] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            className="mx-auto w-full p-6 rounded-4xl border-8 olem-code-preview
+            <motion.div
+              animate={reducedMotion ? undefined : { y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              className="mx-auto w-full p-6 rounded-4xl border-8 olem-code-preview
             bg-[#0F0F0F]
             backdrop-blur-xl"
-          >
-            <div className="mb-4 flex flex-row-reverse justify-end gap-2">
-              <span className="h-3 w-3 rounded-full bg-green-400" />
-              <span className="h-3 w-3 rounded-full bg-yellow-400" />
-              <span className="h-3 w-3 rounded-full bg-red-400" />
-            </div>
+            >
+              <div className="mb-4 flex flex-row-reverse justify-end gap-2">
+                <span className="h-3 w-3 rounded-full bg-green-400" />
+                <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                <span className="h-3 w-3 rounded-full bg-red-400" />
+              </div>
 
-            <p dir="ltr" className="font-mono text-[15px] leading-4 text-white">
-              <span className="text-[#7BC279]">System</span>.out.
-              <span className="text-[#FF78CB]">println</span>(
-              <span className="text-[#FF9595]">"Hello World"</span>);
-            </p>
-          </motion.div>
+              <p
+                dir="ltr"
+                className="font-mono text-[15px] leading-4 text-white"
+              >
+                <span className="text-[#7BC279]">System</span>.out.
+                <span className="text-[#FF78CB]">println</span>(
+                <span className="text-[#FF9595]">"Hello World"</span>);
+              </p>
+            </motion.div>
           </div>
         </Reveal>
       </div>

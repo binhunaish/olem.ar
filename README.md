@@ -33,7 +33,7 @@
 استنساخ المستودع من المنصة:
 
 ```bash
-git clone https://github.com/binhunaish/olem.ar.git
+git clone https://github.com/olem.ar/olem.ar.git
 ```
 
 الانتقال إلى مجلد المشروع:

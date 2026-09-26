@@ -32,7 +32,7 @@ const config = {
   future: {
     v4: true,
   },
-  url: "https://binhunaish.github.io/",
+  url: "https://olem-ar.github.io/olem.ar/",
   baseUrl: "/olem.ar",
   organizationName: "عُلِم",
   projectName: "olem.ar",

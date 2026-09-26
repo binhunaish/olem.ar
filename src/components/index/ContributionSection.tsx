@@ -27,7 +27,7 @@ export default function ContributionSteps({
             </p>
 
             <Link
-              to="https://github.com/binhunaish/olem.ar/blob/main/CONTRIBUTING.md"
+              to="https://github.com/olem.ar/olem.ar/blob/main/CONTRIBUTING.md"
               className="inline-flex items-center justify-center gap-2 text-(--ifm-color-primary) hover:text-(--olem-navbar-hover)"
             >
               <div className="text-[16px] font-bold">
